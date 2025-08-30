@@ -1,151 +1,124 @@
-🏎️ F1 Race Visualizer — Track + Leaderboard + Position Chart
+# 🏎️ F1 Race Visualizer  
+**Track · Leaderboard · Position Chart**
 
-An interactive p5.js visualization of Formula 1 race data with live leaderboard, gap calculations, tyre usage, and track replay.
-Designed for the Austrian Grand Prix 2024, but reusable for any race with suitable CSV input.
+Ever watched a Formula 1 race and wished you could **replay the action, analyse strategy, and see every gap and pit stop in detail**?  
+This project makes that possible.  
 
-✨ Features
+The **F1 Race Visualizer** is an interactive tool built with **p5.js** that brings raw race data to life. It combines:  
+- A **track replay** that shows cars racing in real time  
+- A **dynamic leaderboard** with gaps, tyre information, and pit/retirement overlays  
+- A **positions-over-time chart** that lets you explore how the race evolved lap by lap  
 
-Track replay
+Originally developed for the **Austrian Grand Prix 2024**, the visualizer is flexible and can be reused for **any race** as long as the correct CSV data is provided.  
 
-Cars animated around the circuit using positional telemetry
+---
 
-Pit-entry detection (with overlay)
+## ✨ Features
 
-Smooth car motion and hover tooltips
+### 🔄 Track Replay
+- Animated cars using positional telemetry  
+- Pit-entry detection with overlay  
+- Smooth car motion and hover tooltips  
 
-Dynamic Leaderboard
+### 📊 Dynamic Leaderboard
+- Excel-like auto-sized columns  
+- Real-time gaps: *Leader* or *Ahead*  
+- PIT and DNF overlays  
+- Chequered flag freeze at final lap  
+- Tyre column with icons + tyre age counter *(toggle Show / Hide)*  
 
-Excel-like auto-sized columns
+### 🎮 Playback Controls
+- Play / Pause (button or Spacebar)  
+- Speed presets: **1x, 5x, 10x, 20x**  
+- Gap mode toggle: *Leader ↔ Ahead*  
 
-Real-time positions with gap calculation (Leader vs Ahead)
+### 📈 Positions Chart
+- Positions vs Lap graph with snap-to-lap hover  
+- Linked highlighting between **Track ↔ Leaderboard ↔ Chart**  
+- Smooth crossfade transition between views  
 
-PIT and DNF overlays
+### 🎨 UI & Branding
+- Title + F1 logo  
+- Info row: *Time · Speed · Lap counter*  
+- Team logos & colours  
+- Tyre icons (Soft / Medium / Hard)  
 
-Chequered flag freeze at final lap
+---
 
-Tyre column with icons + age counter (toggle Show/Hide)
+## 📂 Data & Assets
 
-Race Playback Controls
+The visualization requires the following files:  
 
-Play / Pause (button or Spacebar)
+- `source/drivers.csv` → driver metadata *(driver_number, team_name, team_colour, name_acronym)*  
+- `source/location_driver_{n}.csv` → positional telemetry per driver  
+- `source/position.csv` → absolute timestamp table  
+- `source/stints.csv` → tyre stints *(driver_number, lap_start, lap_end, compound, tyre_age_at_start)*  
+- `source/logo/{team}.png` → team logos *(recommended: white versions)*  
+- `source/tyre/{soft_tyre|medium_tyre|hard_tyre}.png` → tyre icons  
+- `source/F1tm/F1tm.png` → F1 logo  
+- `source/chequered_flag.png` → chequered flag overlay  
 
-Speed presets: 1x, 5x, 10x, 20x
+---
 
-Gap mode toggle: Leader / Ahead
+## ⌨️ Controls
+- **Play / Pause** → Button or Spacebar  
+- **Speed presets** → 1x, 5x, 10x, 20x  
+- **Gap mode** → Leader / Ahead *(toggle in leaderboard header)*  
+- **Tyre display** → Hide / Show *(toggle in leaderboard header)*  
+- **Switch view** → Chart button *(crossfade Track ↔ Chart)*  
 
-Positions Chart
+---
 
-Positions vs Lap graph with snap-to-lap hover
+## 🖱️ Click Interactions
+- Car on track → Select driver  
+- Row in leaderboard → Select driver  
+- Point on chart → Select driver  
 
-Linked highlighting between track ↔ leaderboard ↔ chart
+---
 
-Smooth crossfade transition between Track and Chart
+## 🏁 Race Logic
+- Formation lap visible before Green flag  
+- Gaps calculated only after Green *(at minisectors)*  
+- Pit-entry detection via hidden gate *(overlay only)*  
+- DNF drivers remain frozen in classification  
+- **Lap 72 → leaderboard freezes with 🏁 chequered flag**  
 
-UI/Branding
+---
 
-Title + F1 logo
+## 📸 Preview
 
-Info row with Time, Speed, Lap counter
+### Leaderboard
+At the core is a dynamic leaderboard that updates lap by lap. Every pit stop, tyre change, and fight for position becomes immediately visible, making the strategic side of racing easy to follow and understand.
 
-Team logos & colours
+<img width="615" height="367" alt="Leaderboard" src="https://github.com/user-attachments/assets/66a4e650-549c-4075-81c9-f9bd5ef8c6d1" />
 
-Tyre icons (Soft / Medium / Hard)
+### Race Track
+Complementing this is an animated track map that shows every car circulating the circuit, reconstructed from real GPS and timing data. Viewers can watch overtakes and pit lane entries unfold in real time, gaining an intuitive sense of how the race develops.
 
-📂 Data & Assets
+<img width="802" height="513" alt="Track" src="https://github.com/user-attachments/assets/0963238c-12fa-4a11-bb97-df3813fdee82" />
 
-The visualization reads data from CSV files and images:
+### Timeline
+To capture the bigger picture, the system also creates a complete race timeline, tracking position changes across every lap. This history view allows the entire Grand Prix to be replayed and analyzed, highlighting decisive moments and turning points that shaped the final result.
 
-source/drivers.csv — driver metadata (driver_number, team_name, team_colour, name_acronym)
+<img width="557" height="437" alt="Timeline" src="https://github.com/user-attachments/assets/01e18a5f-ec7b-4538-bf17-829b54cf5235" />  
 
-source/location_driver_{n}.csv — positional telemetry per driver
+---
 
-source/position.csv — timing table for absolute timestamps
+## 🛠️ Tech Stack
+- **p5.js** → rendering & animation  
+- **CSV data files** → driver info, positions, stints  
+- **Vanilla JavaScript** → race logic & interactions  
 
-source/stints.csv — stint data (driver_number, lap_start, lap_end, compound, tyre_age_at_start)
+---
 
-source/logo/{team}.png — team logos (white versions recommended)
+## 🚀 Roadmap / Ideas
+- Sector / lap time comparison table  
+- Multi-race support *(select Grand Prix)*  
+- Live data feed *(instead of static CSV)*  
+- Mobile-friendly layout  
 
-source/tyre/{soft_tyre|medium_tyre|hard_tyre}.png — tyre icons
+---
 
-source/F1tm/F1tm.png — F1 logo
-
-source/chequered_flag.png — chequered flag overlay
-
-▶️ How to Run
-
-Clone this repository:
-
-git clone https://github.com/yourusername/f1-race-visualizer.git
-cd f1-race-visualizer
-
-
-Serve the project locally (p5.js needs a local server):
-
-npx http-server .
-
-
-or open with VS Code Live Server.
-
-Open in your browser:
-
-http://localhost:8080
-
-⌨️ Controls
-
-Play / Pause → Button or Spacebar
-
-Speed presets → 1x, 5x, 10x, 20x
-
-Toggle gap mode → Leader / Ahead (in leaderboard header)
-
-Toggle tyre display → Hide / Show (in leaderboard header)
-
-Switch Track ↔ Chart → Chart button (crossfade animation)
-
-Click interactions:
-
-Car on track → Select driver
-
-Row in leaderboard → Select driver
-
-Point on chart → Select driver
-
-🏁 Race Logic
-
-Formation lap visible before Green flag
-
-Gaps calculated only after Green (at minisectors)
-
-Pit-entry detection via hidden gate (overlay only, no line)
-
-Drivers marked DNF remain frozen on the board
-
-At Lap 72 → positions freeze with 🏁 flag
-
-📸 Preview
-
-(Add a screenshot or GIF here — leaderboard + track + chart)
-
-🛠️ Tech Stack
-
-p5.js
- — rendering + animation
-
-CSV data files for driver, position, stints
-
-Custom rendering + interaction logic in pure JavaScript
-
-🚀 Roadmap / Ideas
-
- Add sector/lap time comparison table
-
- Support multiple races (select GP)
-
- Live data feed instead of static CSV
-
- Mobile-friendly layout
-
-📜 License
-
-This project is licensed under the MIT License.
-Logos, F1 trademarks, and brand assets belong to their respective owners.
+## 📜 License
+Licensed under the **MIT License**.  
+All F1 logos, trademarks, and brand assets belong to their respective owners.  
