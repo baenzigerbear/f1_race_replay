@@ -1,125 +1,210 @@
-# 🏎️ F1 Race Replay  
+# 🏁 F1 Race Replay
 
-Ever watched a Formula 1 race and wished you could replay the action, break down strategy, and study every gap and pit stop in detail?
-With this project, you can.
+Ever watched a Formula 1 race and wished you could **replay the action, break down strategy, and study every gap and pit stop in detail**?  
+With this project, you can.  
 
-The F1 Race Visualizer is an interactive tool built with p5.js that turns raw race data into an immersive experience. It features:
+The **F1 Race Visualizer** is an interactive tool built with **p5.js** that turns raw race data into an immersive experience. It features:  
 
-A track replay that shows cars battling in real time
+- 🏎️ **Track replay** that shows cars battling in real time  
+- 📊 **Dynamic leaderboard** with gaps, tyre data, and pit/retirement markers  
+- ⏱️ **Positions-over-time chart** to explore how the race unfolded lap by lap  
 
-A dynamic leaderboard with gaps, tyre data, and pit/retirement markers
+Created for the **Austrian Grand Prix 2024**
 
-A positions-over-time chart to explore how the race unfolded lap by lap
-
-First created for the Austrian Grand Prix 2024, the visualizer works with any race—just supply the right CSV data.
 ---
 
 ## ✨ Features
 
-### 🔄 Track Replay
-- Animated cars using positional telemetry  
-- Pit-entry detection with overlay  
-- Smooth car motion and hover tooltips  
+- 🏆 **Dynamic leaderboard**
+  - 📋 Live positions  
+  - ↕️ Position-change with smooth animations  
+  - ⏱️ Gap display (to **Leader** or **Car Ahead**)  
+  - 🛞 Tyre info: compound (🔴 Soft / 🟡 Medium / ⚪ Hard) and tyre age  
+  - 🅿️ Pit stop (PIT) and 💥 DNF indicators  
+  - 🏁 Freeze final order at race end  
 
-### 📊 Dynamic Leaderboard
-- Excel-like auto-sized columns  
-- Real-time gaps: *Leader* or *Ahead*  
-- PIT and DNF overlays  
-- Chequered flag freeze at final lap  
-- Tyre column with icons + tyre age counter *(toggle Show / Hide)*  
+- 🔀 **Dual views**
+  - 🏎️ **Track View**: Cars battling on the circuit in real time  
+  - 📊 **Chart View**: Position changes over the race lap by lap  
 
-### 🎮 Playback Controls
-- Play / Pause (button or Spacebar)  
-- Speed presets: **1x, 5x, 10x, 20x**  
-- Gap mode toggle: *Leader ↔ Ahead*  
-
-### 📈 Positions Chart
-- Positions vs Lap graph with snap-to-lap hover  
-- Linked highlighting between **Track ↔ Leaderboard ↔ Chart**  
-- Smooth crossfade transition between views  
-
-### 🎨 UI & Branding
-- Title + F1 logo  
-- Info row: *Time · Speed · Lap counter*  
-- Team logos & colours  
-- Tyre icons (Soft / Medium / Hard)  
+- 🎨 **Visual polish**
+  - 🎨 Team colors & logos  
+  - 🖱️ Hover tooltips and 👆 click-to-select drivers, synced across all views  
+  - 🔤 Official F1-style fonts & themed backgrounds
+ 
+- 🎬 **Interactive playback**
+  - ▶️ / ⏸️ Play & Pause toggle  
+  - ⏩ Speed presets: 1x, 2x, 5x, 10x, 20x  
 
 ---
 
-## 📂 Data & Assets
+## 📸 Screenshots 
 
-The visualization requires the following files:  
-
-- `source/drivers.csv` → driver metadata *(driver_number, team_name, team_colour, name_acronym)*  
-- `source/location_driver_{n}.csv` → positional telemetry per driver  
-- `source/position.csv` → absolute timestamp table  
-- `source/stints.csv` → tyre stints *(driver_number, lap_start, lap_end, compound, tyre_age_at_start)*  
-- `source/logo/{team}.png` → team logos *(recommended: white versions)*  
-- `source/tyre/{soft_tyre|medium_tyre|hard_tyre}.png` → tyre icons  
-- `source/F1tm/F1tm.png` → F1 logo  
-- `source/chequered_flag.png` → chequered flag overlay  
+screenshot leaderboard
+screenshot racetrack
+screnshot  Position changes over the race lap by lap 
 
 ---
 
-## ⌨️ Controls
-- **Play / Pause** → Button or Spacebar  
-- **Speed presets** → 1x, 5x, 10x, 20x  
-- **Gap mode** → Leader / Ahead *(toggle in leaderboard header)*  
-- **Tyre display** → Hide / Show *(toggle in leaderboard header)*  
-- **Switch view** → Chart button *(crossfade Track ↔ Chart)*  
+
+## 📂 Source
+
+🌐 **Data source:** [openf1.org](https://openf1.org/)  
+
+OpenF1 is an open-source API that provides both **real-time** and **historical Formula 1 data**.  
+
+- 📂 Historical data is freely accessible and requires **no authentication**.  
+- ⚡ Real-time data requires a **paid account** (apply via form on the website).  
+
+For this project, the CSV files were generated using the notebook `f1_api.ipynb`, which connects to the OpenF1 API and exports the relevant race data step by step into CSV format.  
+👉 OpenF1 also provides many more endpoints with great potential (e.g. **car data**, **weather**, **team radio**) that are not used in this project.  
+
+All required data and assets are stored in the `source/` folder:
+
+- 🏎️ **Drivers**
+  - `drivers.csv` → driver number, team, colors, acronym
+    
+  - - ⏱️ **Race data**
+  - `stints.csv` → tyre stints per driver (lap start, lap end, compound, tyre age)  
+  - `location_driver_{n}.csv` → x/y coordinates for each driver on track
+ 
+ - 🖼️ **Assets**
+  - `logo/` → team logos  
+  - `tyre/` → tyre icons
+  - `background/` → track background images  
+  - `fonts/` → F1-style fonts  
+  - `f1tm/` → official F1 logo
 
 ---
 
-## 🖱️ Click Interactions
-- Car on track → Select driver  
-- Row in leaderboard → Select driver  
-- Point on chart → Select driver  
+## 📑 Data format
+
+
+### 🏎️ `drivers.csv`
+Basic driver and team information.  
+
+| driver_number | team_name | team_colour | name_acronym |
+|---------------|-----------|-------------|--------------|
+| 1             | Red Bull  | #3671C6     | VER          |
+| 16            | Ferrari   | #E8002D     | LEC          |
+
+
+### 📍 `location_driver_{n}.csv`
+One file per driver (`n` = driver number).  
+Contains the car’s position on track over time.  
+
+| date                | x     | y     |
+|---------------------|-------|-------|
+| 2024-06-30 14:01:23 | 123.4 | 567.8 |
+| 2024-06-30 14:01:25 | 125.1 | 564.2 |
+
+
+### ⏱️ `stints.csv`
+Tyre stints per driver.  
+
+| driver_number | lap_start | lap_end | compound | tyre_age_at_start |
+|---------------|-----------|---------|----------|-------------------|
+| 1             | 1         | 18      | SOFT     | 0                 |
+| 1             | 19        | 42      | HARD     | 0                 |
 
 ---
 
-## 🏁 Race Logic
-- Formation lap visible before Green flag  
-- Gaps calculated only after Green *(at minisectors)*  
-- Pit-entry detection via hidden gate *(overlay only)*  
-- DNF drivers remain frozen in classification  
-- **Lap 72 → leaderboard freezes with 🏁 chequered flag**  
+## 🛠️ Installation & Start
+
+### 📥 **Clone or download** this repository
+
+### 📂 Check data & assets
+Make sure the source/ folder contains all required CSV files and assets (see Source).
+
+### 🔗 Use for direct watch
+statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html
 
 ---
 
-## 📸 Preview
+## 🎮 Controls
 
-### Leaderboard
-At the core is a dynamic leaderboard that updates lap by lap. Every pit stop, tyre change, and fight for position becomes immediately visible, making the strategic side of racing easy to follow and understand.
+### ⌨️ Keyboard
+- **Spacebar** → ▶️ / ⏸️ Play & Pause  
 
-<img width="615" height="367" alt="Leaderboard" src="https://github.com/user-attachments/assets/66a4e650-549c-4075-81c9-f9bd5ef8c6d1" />
+### 🖱️ Mouse
+- **Hover** over car or leaderboard entry → highlight driver across all views  
+- **Click** on car or leaderboard entry → select driver (keeps highlight)  
 
-### Race Track
-Complementing this is an animated track map that shows every car circulating the circuit, reconstructed from real GPS and timing data. Viewers can watch overtakes and pit lane entries unfold in real time, gaining an intuitive sense of how the race develops.
-
-<img width="802" height="513" alt="Track" src="https://github.com/user-attachments/assets/0963238c-12fa-4a11-bb97-df3813fdee82" />
-
-### Timeline
-To capture the bigger picture, the system also creates a complete race timeline, tracking position changes across every lap. This history view allows the entire Grand Prix to be replayed and analyzed, highlighting decisive moments and turning points that shaped the final result.
-
-<img width="557" height="437" alt="Timeline" src="https://github.com/user-attachments/assets/01e18a5f-ec7b-4538-bf17-829b54cf5235" />  
-
----
-
-## 🛠️ Tech Stack
-- **p5.js** → rendering & animation  
-- **CSV data files** → driver info, positions, stints  
-- **Vanilla JavaScript** → race logic & interactions  
+### 🔘 UI Buttons
+- ▶️ / ⏸️ Play & Pause toggle  
+- ⏩ Speed presets: 1x · 2x · 5x · 10x · 20x  
+- 🔀 Switch between **Track View** and **Chart View**  
+- ⏱️ Toggle gap display (Leader vs Car Ahead)  
+- 🛞 Show / hide tyre info  
 
 ---
 
-## 🚀 Roadmap / Ideas
-- Sector / lap time comparison table  
-- Multi-race support *(select Grand Prix)*  
-- Live data feed *(instead of static CSV)*  
-- Mobile-friendly layout  
+## 📌 Roadmap / Potential features:
+
+- 🖥️ **Fullscreen & responsive design** → optimized for all devices  
+- 📜 **Timeline slider** → scrollable lap navigation (forward & backward)  
+- 🏁 **Start grid presentation** → with driver images  
+- 🏆 **Race result presentation** → with driver images  
+- ⏱️ **Lap timing charts** → compare drivers by fastest laps and sector times  
+- 🏎️ **Driver details** → car telemetry such as throttle, speed, gear, brake usage  
+- 🚩 **Race control hints** → blue flag, yellow flag, red flag events  
+- 🌦️ **Weather integration** → show track conditions (rain, temperature, wind)  
+- 📻 **Team radio** → display or play selected radio messages  
+- 🖼️ **Enhanced visuals** → dynamic camera angles, maybe even 3D  
+- 🗂️ **Multiple race support** → see chapter limitaions
 
 ---
 
-## 📜 License
-Licensed under the **MIT License**.  
-All F1 logos, trademarks, and brand assets belong to their respective owners.  
+## ⚠️ Limitations
+
+Currently, the visualizer is tailored to the **Austrian Grand Prix 2024**.  
+Several parts of the code contain hardcoded values and workarounds that prevent simply switching to another race:
+
+🏁 **Race start & finish hardcoded**
+```
+const START_FINISH_TIMESTAMP = "2024-06-30T13:03:03.203000+00:00";
+const FINAL_LAP = 72;
+```
+→ Start time and final lap count are fixed for Austria 2024.
+
+⏱️ **Minisectors with static timestamps**
+```
+const MINISECTOR_TS = [
+  "2024-06-30T13:00:15.684000+00:00",
+  ...
+];
+```
+→ Detection gates are specific to Austrian Grand Prix and not calculated dynamically.
+
+🛑 **Pit entry workaround**
+```
+const PIT_ENTRY_TIMESTAMP = "2024-06-30T13:04:15.823000+00:00";
+const PIT_END_TIMESTAMP   = "2024-06-30T13:05:20+00:00";
+```
+→ Pit detection relies on manual timestamps (based on driver 16).
+
+💥 **DNF events hardcoded**
+```
+const DNF_EVENTS = [{ dn: '4', timestamp: "2024-06-30T14:20:10.005000+00:00" }];
+```
+→ Retirements must be entered manually.
+
+🎨 **Title locked**
+```
+const TITLE_TEXT = 'Austrian Grand Prix 2024';
+```
+→ Needs to be updated manually for each race.
+
+---
+
+## 🙏 Credits / Acknowledgments
+
+- 🌐 Thanks to [OpenF1](https://openf1.org/) for providing the API and making real Formula 1 data accessible.  
+- 🖼️ Team logos, fonts, and the official F1™ logo are used for illustrative purposes only.  
+
+⚠️ **Disclaimer:**  
+This project is a fan-made visualization. It is **not affiliated with, endorsed by, or associated with Formula 1**, the FIA, or any related organizations.  
+All trademarks, logos, and brand names are the property of their respective owners.
+
+
+
