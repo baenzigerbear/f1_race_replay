@@ -1,16 +1,17 @@
-# 🏎️ F1 Race Visualizer  
-**Track · Leaderboard · Position Chart**
+# 🏎️ F1 Race Replay  
 
-Ever watched a Formula 1 race and wished you could **replay the action, analyse strategy, and see every gap and pit stop in detail**?  
-This project makes that possible.  
+Ever watched a Formula 1 race and wished you could replay the action, break down strategy, and study every gap and pit stop in detail?
+With this project, you can.
 
-The **F1 Race Visualizer** is an interactive tool built with **p5.js** that brings raw race data to life. It combines:  
-- A **track replay** that shows cars racing in real time  
-- A **dynamic leaderboard** with gaps, tyre information, and pit/retirement overlays  
-- A **positions-over-time chart** that lets you explore how the race evolved lap by lap  
+The F1 Race Visualizer is an interactive tool built with p5.js that turns raw race data into an immersive experience. It features:
 
-Originally developed for the **Austrian Grand Prix 2024**, the visualizer is flexible and can be reused for **any race** as long as the correct CSV data is provided.  
+A track replay that shows cars battling in real time
 
+A dynamic leaderboard with gaps, tyre data, and pit/retirement markers
+
+A positions-over-time chart to explore how the race unfolded lap by lap
+
+First created for the Austrian Grand Prix 2024, the visualizer works with any race—just supply the right CSV data.
 ---
 
 ## ✨ Features
