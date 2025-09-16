@@ -1,5 +1,6 @@
 # 🏁 F1 Race Replay
 
+
 Ever watched a Formula 1 race and wished you could **replay the action, break down strategy, and study every gap and pit stop in detail**?  
 With this project, you can.  
 
@@ -11,7 +12,9 @@ The **F1 Race Visualizer** is an interactive tool built with **p5.js** that turn
 
 Created for the **Austrian Grand Prix 2024**
 
+
 ---
+
 
 ## ✨ Features
 
@@ -36,13 +39,21 @@ Created for the **Austrian Grand Prix 2024**
   - ▶️ / ⏸️ Play & Pause toggle  
   - ⏩ Speed presets: 1x, 2x, 5x, 10x, 20x  
 
+
 ---
+
 
 ## 📸 Screenshots 
 
 screenshot leaderboard
+<img width="246" height="640" alt="leaderboard_no_bg (3)" src="https://github.com/user-attachments/assets/0eb29502-217d-4a3c-a9ba-e1b640fe66c2" />
+
 screenshot racetrack
+<img width="992" height="637" alt="track_no_background" src="https://github.com/user-attachments/assets/26125640-9afc-47f6-a961-c164924fac0c" />
+
 screnshot  Position changes over the race lap by lap 
+<img width="901" height="702" alt="93ecbf7e-b92a-466a-9a13-8639cfa99758_transparent" src="https://github.com/user-attachments/assets/784faef7-156b-4388-afeb-5c324bcb4103" />
+
 
 ---
 
@@ -75,7 +86,9 @@ All required data and assets are stored in the `source/` folder:
   - `fonts/` → F1-style fonts  
   - `f1tm/` → official F1 logo
 
+
 ---
+
 
 ## 📑 Data format
 
@@ -107,7 +120,9 @@ Tyre stints per driver.
 | 1             | 1         | 18      | SOFT     | 0                 |
 | 1             | 19        | 42      | HARD     | 0                 |
 
+
 ---
+
 
 ## 🛠️ Installation & Start
 
@@ -119,7 +134,9 @@ Make sure the source/ folder contains all required CSV files and assets (see Sou
 ### 🔗 Use for direct watch
 statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html
 
+
 ---
+
 
 ## 🎮 Controls
 
@@ -137,7 +154,9 @@ statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html
 - ⏱️ Toggle gap display (Leader vs Car Ahead)  
 - 🛞 Show / hide tyre info  
 
+
 ---
+
 
 ## 📌 Roadmap / Potential features:
 
@@ -153,7 +172,9 @@ statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html
 - 🖼️ **Enhanced visuals** → dynamic camera angles, maybe even 3D  
 - 🗂️ **Multiple race support** → see chapter limitaions
 
+
 ---
+
 
 ## ⚠️ Limitations
 
@@ -195,9 +216,11 @@ const TITLE_TEXT = 'Austrian Grand Prix 2024';
 ```
 → Needs to be updated manually for each race.
 
+
 ---
 
-## 🙏 Credits / Acknowledgments
+
+## 🙏 Credits
 
 - 🌐 Thanks to [OpenF1](https://openf1.org/) for providing the API and making real Formula 1 data accessible.  
 - 🖼️ Team logos, fonts, and the official F1™ logo are used for illustrative purposes only.  
