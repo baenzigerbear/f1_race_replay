@@ -13,6 +13,19 @@ The **F1 Race Visualizer** is an interactive tool built with **p5.js** that turn
 Created for the **Austrian Grand Prix 2024**
 
 
+## 📖 README Structure
+
+✨ Features  
+📂 Source  
+📑 Data format  
+🛠️ Installation & Start  
+🎮 Controls  
+📌 Roadmap
+⚠️ Limitations  
+📸 Screenshots  
+🙏 Credits / Acknowledgments  
+
+
 ---
 
 
@@ -38,21 +51,6 @@ Created for the **Austrian Grand Prix 2024**
 - 🎬 **Interactive playback**
   - ▶️ / ⏸️ Play & Pause toggle  
   - ⏩ Speed presets: 1x, 2x, 5x, 10x, 20x  
-
-
----
-
-
-## 📸 Screenshots 
-
-screenshot leaderboard
-<img width="246" height="640" alt="leaderboard_no_bg (3)" src="https://github.com/user-attachments/assets/0eb29502-217d-4a3c-a9ba-e1b640fe66c2" />
-
-screenshot racetrack
-<img width="992" height="637" alt="track_no_background" src="https://github.com/user-attachments/assets/26125640-9afc-47f6-a961-c164924fac0c" />
-
-screnshot  Position changes over the race lap by lap 
-<img width="901" height="702" alt="93ecbf7e-b92a-466a-9a13-8639cfa99758_transparent" src="https://github.com/user-attachments/assets/784faef7-156b-4388-afeb-5c324bcb4103" />
 
 
 ---
@@ -158,7 +156,7 @@ statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html
 ---
 
 
-## 📌 Roadmap / Potential features:
+## 📌 Roadmap
 
 - 🖥️ **Fullscreen & responsive design** → optimized for all devices  
 - 📜 **Timeline slider** → scrollable lap navigation (forward & backward)  
@@ -215,6 +213,21 @@ const DNF_EVENTS = [{ dn: '4', timestamp: "2024-06-30T14:20:10.005000+00:00" }];
 const TITLE_TEXT = 'Austrian Grand Prix 2024';
 ```
 → Needs to be updated manually for each race.
+
+
+---
+
+
+## 📸 Screenshots 
+
+screenshot leaderboard
+<img width="246" height="640" alt="leaderboard_no_bg (3)" src="https://github.com/user-attachments/assets/0eb29502-217d-4a3c-a9ba-e1b640fe66c2" />
+
+screenshot racetrack
+<img width="992" height="637" alt="track_no_background" src="https://github.com/user-attachments/assets/26125640-9afc-47f6-a961-c164924fac0c" />
+
+screnshot  Position changes over the race lap by lap 
+<img width="901" height="702" alt="93ecbf7e-b92a-466a-9a13-8639cfa99758_transparent" src="https://github.com/user-attachments/assets/784faef7-156b-4388-afeb-5c324bcb4103" />
 
 
 ---
