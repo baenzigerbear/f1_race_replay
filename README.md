@@ -23,10 +23,10 @@ Created for the **Austrian Grand Prix 2024**
 📌 Roadmap
 ⚠️ Limitations  
 📸 Screenshots  
-🙏 Credits / Acknowledgments  
-<br><br>
+🙏 Credits / Acknowledgments
 
----
+
+<br><br>
 
 
 ## ✨ Features
@@ -53,7 +53,7 @@ Created for the **Austrian Grand Prix 2024**
   - ⏩ Speed presets: 1x, 2x, 5x, 10x, 20x  
 
 
----
+<br><br>
 
 
 ## 📂 Source
@@ -85,7 +85,7 @@ All required data and assets are stored in the `source/` folder:
   - `f1tm/` → official F1 logo
 
 
----
+<br><br>
 
 
 ## 📑 Data format
@@ -119,7 +119,7 @@ Tyre stints per driver.
 | 1             | 19        | 42      | HARD     | 0                 |
 
 
----
+<br><br>
 
 
 ## 🛠️ Installation & Start
@@ -133,7 +133,7 @@ Make sure the source/ folder contains all required CSV files and assets (see Sou
 statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html
 
 
----
+<br><br>
 
 
 ## 🎮 Controls
@@ -153,7 +153,7 @@ statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html
 - 🛞 Show / hide tyre info  
 
 
----
+<br><br>
 
 
 ## 📌 Roadmap
@@ -171,7 +171,7 @@ statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html
 - 🗂️ **Multiple race support** → see chapter limitaions
 
 
----
+<br><br>
 
 
 ## ⚠️ Limitations
@@ -215,7 +215,7 @@ const TITLE_TEXT = 'Austrian Grand Prix 2024';
 → Needs to be updated manually for each race.
 
 
----
+<br><br>
 
 
 ## 📸 Screenshots 
@@ -230,7 +230,7 @@ screnshot  Position changes over the race lap by lap
 <img width="901" height="702" alt="93ecbf7e-b92a-466a-9a13-8639cfa99758_transparent" src="https://github.com/user-attachments/assets/784faef7-156b-4388-afeb-5c324bcb4103" />
 
 
----
+<br><br>
 
 
 ## 🙏 Credits
