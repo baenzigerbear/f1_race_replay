@@ -20,7 +20,7 @@ Created for the **Austrian Grand Prix 2024**
 📑 Data format  
 🛠️ Installation & Start  
 🎮 Controls  
-📌 Roadmap
+📌 Roadmap  
 ⚠️ Limitations  
 📸 Screenshots  
 🙏 Credits / Acknowledgments
@@ -219,6 +219,7 @@ const TITLE_TEXT = 'Austrian Grand Prix 2024';
 
 
 ## 📸 Screenshots 
+
 
 ### 🏎️ Track replay
 
