@@ -222,12 +222,17 @@ const TITLE_TEXT = 'Austrian Grand Prix 2024';
 
 screenshot leaderboard
 <img width="246" height="640" alt="leaderboard_no_bg (3)" src="https://github.com/user-attachments/assets/0eb29502-217d-4a3c-a9ba-e1b640fe66c2" />
+<br><br>
 
 screenshot racetrack
 <img width="992" height="637" alt="track_no_background" src="https://github.com/user-attachments/assets/26125640-9afc-47f6-a961-c164924fac0c" />
+<br><br>
+
 
 screnshot  Position changes over the race lap by lap 
 <img width="901" height="702" alt="93ecbf7e-b92a-466a-9a13-8639cfa99758_transparent" src="https://github.com/user-attachments/assets/784faef7-156b-4388-afeb-5c324bcb4103" />
+<br><br>
+
 
 
 <br><br>
