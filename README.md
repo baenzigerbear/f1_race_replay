@@ -12,8 +12,7 @@ The **F1 Race Visualizer** is an interactive tool built with **p5.js** that turn
 
 Created for the **Austrian Grand Prix 2024**
 
-
-## 📖 README Structure
+<br><br>
 
 ## 📖 README Structure
 
