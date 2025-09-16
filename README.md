@@ -15,15 +15,18 @@ Created for the **Austrian Grand Prix 2024**
 
 ## 📖 README Structure
 
-✨ Features  
-📂 Source  
-📑 Data format  
-🛠️ Installation & Start  
-🎮 Controls  
-📌 Roadmap  
-⚠️ Limitations  
-📸 Screenshots  
-🙏 Credits / Acknowledgments
+## 📖 README Structure
+
+- ✨ Features  
+- 📂 Source  
+- 📑 Data format  
+- 🛠️ Installation & Start  
+- 🎮 Controls  
+- 📌 Roadmap  
+- ⚠️ Limitations  
+- 📸 Screenshots  
+- 🙏 Credits / Acknowledgments  
+
 
 
 <br><br>
