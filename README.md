@@ -71,20 +71,20 @@ For this project, the CSV files were generated using the notebook `f1_api.ipynb`
 👉 OpenF1 also provides many more endpoints with great potential (e.g. **car data**, **weather**, **team radio**) that are not used in this project.  
 
 All required data and assets are stored in the `source/` folder:
-
-- 🏎️ **Drivers**
-  - `drivers.csv` → driver number, team, colors, acronym
-    
-  - - ⏱️ **Race data**
-  - `stints.csv` → tyre stints per driver (lap start, lap end, compound, tyre age)  
-  - `location_driver_{n}.csv` → x/y coordinates for each driver on track
  
- - 🖼️ **Assets**
-  - `logo/` → team logos  
-  - `tyre/` → tyre icons
-  - `background/` → track background images  
-  - `fonts/` → F1-style fonts  
-  - `f1tm/` → official F1 logo
+### 📊Data (`source/data/`)
+- `drivers/drivers.csv` — columns: `driver_number`, `team`, `colors`, `acronym`
+- `stints/stints.csv` — columns: `lap_start`, `lap_end`, `compound`, `tyre_age_at_start`
+- `location/location_driver_{n}.csv` — x/y coordinates per driver (one file per driver)
+
+### 🔤Fonts
+- `source/fonts/` — F1-style fonts
+
+### 🖼️Images (`source/images/`)
+- `background/` — track background images
+- `teams/` — team logos
+- `tyres/` — tyre icons
+- `F1tm/` — official F1 logo
 
 
 <br><br>
@@ -171,7 +171,7 @@ statics.teams.cdn.office.net/evergreen-assets/safelinks/2/atp-safelinks.html
 - 📻 **Team radio** → display or play selected radio messages  
 - 🖼️ **Enhanced visuals** → dynamic camera angles, maybe even 3D  
 - 🗂️ **Multiple race support** → see chapter limitaions
-
+- 📊 **Detailed lap charts**  → timed laps of a driver in detail
 
 <br><br>
 
